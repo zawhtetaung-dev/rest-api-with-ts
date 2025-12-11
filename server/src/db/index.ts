@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    let DB_CONNECTION_STRING = "";
-  try {
     
+  try {
+    let DB_CONNECTION_STRING = "";
     if (process.env.NODE_ENV == "development") {
       DB_CONNECTION_STRING = process.env.MONGOOSE_LOCAL_URI!;
       
