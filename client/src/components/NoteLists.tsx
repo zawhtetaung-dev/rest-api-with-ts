@@ -19,8 +19,11 @@ const NoteLists = () => {
         const fetchNotes = async()=>
         {
             const data = await getNotes();
+            if (data) {           // null, undefined, empty array will be prevented
             setNotes(data);
-            // console.log("Response Data : " , data);  
+            } else {
+                setNotes([]);     // optional fallback
+            }
         }
         fetchNotes();
     }
